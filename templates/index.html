@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Series Analytics Engine</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Time Series Analytics Engine</h1>
+<p class="sub">Insert and analyze timestamped data</p>
+<section>
+<h2>Insert Data</h2>
+<div class="row">
+<input id="timestamp" type="number" placeholder="Timestamp">
+<input id="value" type="number" step="any" placeholder="Value">
+<button onclick="insertData()">Insert</button>
+</div>
+<p id="insertResult"></p>
+</section>
+<section>
+<h2>Analyze Range</h2>
+<div class="row">
+<input id="start" type="number" placeholder="Start timestamp">
+<input id="end" type="number" placeholder="End timestamp">
+<button onclick="analyze()">Analyze</button>
+</div>
+<div id="stats" class="stats"></div>
+<div id="queryResult"></div>
+</section>
+<section>
+<h2>Stored Data</h2>
+<div id="data"></div>
+<div class="buttons">
+<button onclick="loadData()">Refresh</button>
+<button onclick="downloadData()">Export JSON</button>
+<button class="danger" onclick="resetData()">Reset</button>
+</div>
+</section>
+</div>
+<script src="{{ url_for('static',filename='script.js') }}"></script>
+</body>
+</html>
