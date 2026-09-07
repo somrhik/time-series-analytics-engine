@@ -1,84 +1,155 @@
-# Time Series Analytics Engine
+# ⏱️ Time Series Analytics Engine
 
-A Flask-based web application for inserting, querying, and analyzing timestamped time-series data. The project provides statistical analysis and JSON export through a simple browser interface.
+A Python and Flask-based web application for inserting, querying, and analyzing timestamped time-series data. The application provides basic statistical analysis and JSON export through a simple browser-based interface.
 
-## Features
+🔗 **Live Demo:** [https://time-series-analytics-engine.vercel.app/](https://time-series-analytics-engine.vercel.app/)
 
-* Insert timestamp/value data
-* Store and manage time-series data sequentially
-* Query values within a timestamp range
-* Calculate count and average
-* Find minimum and maximum values
-* View stored data in JSON format
-* Export data as a JSON file
-* Reset stored data
-* Unit tests for the analytics engine
+---
 
-## Tech Stack
+## ✨ Features
 
-* **Python**
-* **Flask**
-* **HTML**
-* **CSS**
-* **JavaScript**
-* **JSON**
+* 📥 Insert timestamped data with numerical values
+* 🔎 Query data within a selected time range
+* 📊 Calculate count and average
+* 📈 Find minimum and maximum values
+* 🗂️ View stored time-series data
+* 📤 Export data as JSON
+* 🔄 Refresh stored data
+* 🗑️ Reset stored data
+* 🧪 Unit tests for the analytics engine
+* 🌐 Browser-based interface
 
-## Project Structure
+---
+
+## 🛠️ Tech Stack
+
+* 🐍 **Python**
+* ⚡ **Flask**
+* 🌐 **HTML**
+* 🎨 **CSS**
+* 🟨 **JavaScript**
+* 📦 **JSON**
+* 🚀 **Vercel** — Deployment
+
+---
+
+## 📁 Project Structure
 
 ```text
 time-series-analytics-engine/
-├── app.py
-├── engine.py
-├── requirements.txt
-├── README.md
-├── .gitignore
+│
+├── static/
+│   ├── script.js
+│   └── style.css
+│
 ├── templates/
 │   └── index.html
-├── static/
-│   ├── style.css
-│   └── script.js
-└── tests/
-    └── test_engine.py
+│
+├── tests/
+│   └── test_engine.py
+│
+├── .gitignore
+├── app.py
+├── engine.py
+├── README.md
+└── requirements.txt
 ```
 
-## How It Works
+---
 
-The application consists of two main parts:
+## ⚙️ How It Works
 
-**Analytics Engine (`engine.py`)**
-Handles data insertion, range queries, average calculation, minimum/maximum detection, and JSON export.
+The application consists of two main components:
 
-**Flask Application (`app.py`)**
-Provides the web interface and API endpoints through which users interact with the engine.
+### 🧠 Analytics Engine
 
-## Installation
+`engine.py` contains the core time-series functionality, including:
 
-Clone the repository:
+* Data insertion
+* Sequential storage
+* Range-based querying
+* Average calculation
+* Minimum and maximum detection
+* JSON export
+
+### 🌐 Flask Web Application
+
+`app.py` provides the web interface and API endpoints that allow users to interact with the analytics engine through their browser.
+
+---
+
+## 🖥️ Using the Application
+
+The application can be used through the **live deployment** or by running it locally.
+
+### 📥 Insert Data
+
+Select a date and time, enter a numerical value, and click **Insert**.
+
+Example:
+
+```text
+05-01-2026 09:30:00 → 100
+12-02-2026 15:45:00 → 150
+20-03-2026 21:15:00 → 80
+```
+
+### 🔎 Analyze a Range
+
+Select a start and end timestamp and click **Analyze**.
+
+The application displays:
+
+* Count
+* Average
+* Minimum
+* Maximum
+* Values within the selected range
+
+### 📤 Export Data
+
+Click **Export JSON** to export the stored time-series data in JSON format.
+
+### 🔄 Refresh
+
+Click **Refresh** to view the currently stored data.
+
+### 🗑️ Reset
+
+Click **Reset** to clear the currently stored data.
+
+---
+
+## 🚀 Run Locally
+
+### 1. Clone the repository
 
 ```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
 cd time-series-analytics-engine
 ```
 
-Create a virtual environment:
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate it on Windows PowerShell:
+### 3. Activate the virtual environment
+
+**Windows PowerShell:**
 
 ```powershell
 venv\Scripts\activate
 ```
 
-Install dependencies:
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run the Application
+### 5. Start the application
 
 ```bash
 python app.py
@@ -90,48 +161,47 @@ Open the application in your browser:
 http://127.0.0.1:5000
 ```
 
-## Using the Application
+---
 
-1. Enter a **timestamp** and **value**.
-2. Click **Insert**.
-3. Enter a start and end timestamp.
-4. Click **Analyze**.
-5. View the count, average, minimum, maximum, and values within the selected range.
-6. Use **Export JSON** to export the stored data.
-7. Use **Reset** to clear the current data.
+## 🔌 API Endpoints
 
-## API Endpoints
-
-| Method | Endpoint      | Purpose                     |
+| Method | Endpoint      | Description                 |
 | ------ | ------------- | --------------------------- |
 | `GET`  | `/`           | Web interface               |
 | `POST` | `/api/insert` | Insert timestamped data     |
 | `GET`  | `/api/query`  | Query values within a range |
 | `GET`  | `/api/stats`  | Calculate statistics        |
-| `GET`  | `/api/export` | Export stored data as JSON  |
+| `GET`  | `/api/export` | Export data as JSON         |
 | `POST` | `/api/reset`  | Reset stored data           |
 
-## Testing
+---
 
-Run the unit tests with:
+## 🧪 Testing
+
+Run the unit tests using:
 
 ```bash
 python -m unittest discover tests
 ```
 
-## Project Background
+---
 
-This project is an organized web extension of the **Time Series Analytics Engine** developed during the **AICTE–EduSkills Python Full Stack virtual internship**. The original project focused on timestamped data ingestion, sequential storage, range-based querying, statistical aggregation, and JSON reporting.
+## 🎓 Project Background
 
-The web interface extends those core capabilities to allow users to interact with the engine through a browser. The internship report also identifies a GUI/API as a possible future extension of the project.  
+This project was developed as part of the **AICTE–EduSkills Python Full Stack virtual internship**.
 
-## Future Improvements
+The original Time Series Analytics Engine was developed using Python to manage chronological data through timestamped data ingestion, sequential storage, range-based querying, statistical analysis, and JSON reporting.
 
-* Persistent database storage
-* Time-series visualization and charts
-* Authentication
-* Advanced forecasting and trend analysis
-* Additional statistical operations
-* Cloud deployment
+This web version provides a browser-based interface for interacting with these core functionalities.
 
-**Note:** The current version uses in-memory storage, so data is cleared when the application restarts.
+---
+
+## 📜 Internship
+
+**AICTE–EduSkill Virtual Internship**
+
+* **Project:** Time Series Analytics Engine
+* **Role:** Intern
+* **Duration:** 10 Weeks — Jan 2026 to Mar 2026
+* **Mode:** Online / Virtual
+* **Domain:** Python Full Stack Development
